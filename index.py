@@ -4,11 +4,12 @@ import os, streamlit as st
 # os.environ['OPENAI_API_KEY']= ""
 
 from llama_index import GPTSimpleVectorIndex, SimpleDirectoryReader, LLMPredictor, PromptHelper
-from langchain import OpenAI
+# from langchain import OpenAI
+from langchain.chat_models import ChatOpenAI
 
 # This example uses text-davinci-003 by default; feel free to change if desired
 #llm_predictor = LLMPredictor(llm=OpenAI(temperature=0, model_name="text-davinci-003"))
-llm_predictor = LLMPredictor(llm=OpenAI(temperature=0, model_name="gpt-3.5-turbo"))
+llm_predictor = LLMPredictor(llm=ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo"))
 
 # Configure prompt parameters and initialise helper
 max_input_size = 4096
